@@ -1,7 +1,7 @@
 const express = require('express')
 const Property = require('../models/propertyModel')
 const router = express.Router()
-const {createProperty, getProperties} = require('../controllers/propertyControls' )
+const {createProperty, getProperties, deleteProperty, updateProperty, getProperty, getBed} = require('../controllers/propertyControls' )
 
 
 
@@ -10,26 +10,23 @@ router.get('/', (req, res) => {
     res.json({mssg: 'welcome to the app'})
 })
 
+//get a all properties
+router.get('/all', getProperties)
+
+//get a all properties
+router.get('/beds/:qty', getBed)
+
 //get a single property
-router.get('/:beds', getProperties)
+router.get('/:id', getProperty)
 
-
-
-//post a single property
+//create a  property
 router.post('/', createProperty) 
 
-
-
-
-//get all properties based on bedrooms
-router.get('/:ids/bed', (req, res) => {
-    res.json({mssg: 'GET properties with beds'})
-})
-
 //Update a property
-router.patch('/:id', (req, res) => {
-    res.json({mssg: 'UPDATE|property'})
-})
+router.patch('/:id', updateProperty)
+
+//delete a property
+router.delete('/:id', deleteProperty)
 
 module.exports = router
 

@@ -22,15 +22,12 @@ code {
 
 .footer {
   
-  
-  position: absolute;
-  bottom: 0;
-  height: 314px;
-  width: 1407px;
-  
-  background-repeat: no-repeat;
-  background-size:cover;
-  resize: both;
+position: absolute;  
+bottom: 0;
+height: 350px;
+width: 1400px;
+background-repeat: no-repeat;
+
 }
 
 
