@@ -1,24 +1,35 @@
 
+import Propertysearch from "./Propertysearch";
+import { useState, useEffect } from "react";
 
+const Searchbar = ({props1}) => {
 
-const Searchbar = () => {
+    const [searchTermBeds, setSearchTermBeds] = useState("");
+    const [searchTermBath, setSearchTermBath] = useState("");
+
+    const handleChange = (event) => {
+    // 👇 Get input value from "event"
+    setSearchTermBeds(event.target.value);
+    };
     
     return(
         <div className="searchbar">
-            <input 
+            <input className="Bedsearch"
+                value={searchTermBeds}
+                onChange={(e) => setSearchTermBeds(e.target.value)}
+                // onChange={(e) => console.log(e.target.value)}
+                
                 placeholder="beds"
-                onChange={() => {}}
             />
-            <button onClick={() => {
-                alert('clicked');
-                }}>
-                search
+            <input className="Bathsearch"
+                value={searchTermBath}
+                onChange={(e) => setSearchTermBath(e.target.value)}
+                // onChange={(e) => console.log(e.target.value)}
                 
-            </button> 
-                
+                placeholder="Bath"
+            />
             
-            
-        
+            <Propertysearch key={searchTermBeds} beds={searchTermBeds}/>
         </div>
     )
     

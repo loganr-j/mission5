@@ -8,6 +8,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import Home from './pages/Home';
 
+<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'></link>
+
 // ReactDOM.render((
 //   <BrowserRouter>
 //     <App /> {'Home.js', 'renters.js'}
